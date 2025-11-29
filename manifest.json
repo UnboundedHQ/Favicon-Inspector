@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Favicon Inspector Pro",
+  "version": "3.1",
+  "description": "Inspect, download, and analyze a website's favicons with advanced detail and security.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "tabs",
+    "storage",
+    "downloads",
+    "clipboardWrite" 
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "action": {
+    "default_title": "Favicon Inspector Pro"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "favicon-details.html",
+        "favicon-details.css"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}

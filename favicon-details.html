@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favicon Inspector Pro</title>
+    <link rel="stylesheet" href="favicon-details.css">
+</head>
+<body data-theme="light">
+    <div class="app-container">
+        
+        <button id="sidebar-toggle" class="sidebar-toggle" aria-expanded="true" aria-controls="sidebar-menu" title="Toggle Sidebar">
+            <span class="icon icon-close"></span>
+        </button>
+
+        <aside class="sidebar" id="sidebar-menu" aria-label="Inspector Settings and Support">
+            <h2 class="sidebar-title">Inspector Settings</h2>
+            
+            <div id="settings-container" role="group" aria-label="Application Settings">
+                </div>
+            
+            <div class="donate-ad" role="complementary">
+                <p class="ad-title">Love the Inspector? 💖</p>
+                <p class="ad-text">Your support keeps this tool free, secure, and frequently updated!</p>
+                <a href="https://github.com/YourUsername/FaviconInspector" target="_blank" class="donate-button" role="button" aria-label="Support Development on GitHub">
+                    <span class="icon icon-heart"></span> Support Development
+                </a>
+            </div>
+        </aside>
+
+        <main class="main-content" id="main-content">
+            
+            <div id="loading" class="info-message">
+                <span class="icon icon-info"></span> Loading favicon data...
+            </div>
+            
+            <div id="inaccessible-message" class="info-message error-message" style="display:none;" role="alert">
+                <span class="icon icon-info"></span> Cannot inspect favicons on restricted pages (e.g., `chrome://`, `chrome-extension://`).
+            </div>
+
+            <div class="header-container">
+                <h1>Favicon Inspector Pro</h1>
+                <p><span id="page-title">Loading Page Title...</span></p>
+                <p><span class="icon icon-link"></span> <span id="current-url">Loading URL...</span></p>
+            </div>
+
+            <section id="favicon-dashboard" class="dashboard-section" style="display:none;">
+                <h2>Detected Favicons <span id="favicon-count" class="count-badge">0</span></h2>
+                <ul id="favicons-list" class="details-list" role="list">
+                    </ul>
+            </section>
+            
+            <p id="no-favicons-message" class="info-message" style="display:none;" role="alert">
+                <span class="icon icon-info"></span> No specific favicon links were found in the page's HTML, or the target page is currently inaccessible.
+            </p>
+        </main>
+    </div>
+
+    <div id="info-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-content" role="document">
+            <div class="modal-header">
+                <h3 id="modal-title" class="modal-title">Advanced Favicon Details</h3>
+                <button class="close-button" aria-label="Close modal">
+                    <span class="icon icon-close"></span>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                </div>
+            <div class="modal-footer">
+                 <p class="modal-footer-text"><span class="icon icon-info"></span> These details provide insight into how the browser handles the favicon link.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="favicon-details.js"></script>
+</body>
+</html>
